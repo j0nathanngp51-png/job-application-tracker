@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Job Tracker</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+      }
+    </style>
+  </head>
+  <body class="bg-slate-50 min-h-screen">
+    <!-- header: -->
+
+    <header>
+      <div
+        class="max-w-3xl mx-auto px-6 py-4 flex items-center justify-between"
+      >
+        <h1 class="text-xl font-semibold text-slate-900">
+          Job Application Tracker
+        </h1>
+
+        <!-- log out button: -->
+        <button
+          id="logout-btn"
+          class="text-sm font-medium text-slate-500 hover:text-slate-900 transition"
+        >
+          Log out
+        </button>
+      </div>
+      <!-- // ending div -->
+    </header>
+    <!-- // ending header -->
+
+    <!-- main: -->
+
+    <main class="max-w-3xl mx-auto px-6 py-8">
+      <form
+        id="add-form"
+        class="bg-white rounded-xl border border-slate-200 p-6 mb-8 shadow-sm"
+      >
+        <h2 class="text-base font-semibold text-slate-900 mb-4">
+          Add an application
+        </h2>
+        <!-- // company and job title inputs: -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <input
+            type="text"
+            id="company_name"
+            placeholder="Company name"
+            required
+            class="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+          />
+
+          <input
+            type="text"
+            id="job_title"
+            placeholder="Job title"
+            required
+            class="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+          />
+
+          <!-- // menu for status of applications: -->
+          <select
+            id="status"
+            class="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+          >
+            <option value="Applied">Applied</option>
+            <option value="Interviewing">Interviewing</option>
+            <option value="Offer">Offer</option>
+            <option value="Rejected">Rejected</option>
+          </select>
+
+          <!-- the date pof the application and the "URL" of it: -->
+          <input
+            type="date"
+            id="date_applied"
+            required
+            class="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+          />
+
+          <input
+            type="url"
+            id="job_url"
+            placeholder="Job posting URL"
+            class="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 sm:col-span-2"
+          />
+
+          <textarea
+            id="notes"
+            placeholder="Notes"
+            rows="2"
+            class="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 sm:col-span-2"
+          ></textarea>
+        </div>
+
+        <!-- // submitting the application: -->
+
+        <button
+          type="submit"
+          class="mt-4 bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-medium px-4 py-2 rounded-lg transition"
+        >
+          Add application
+        </button>
+      </form>
+
+      <!-- filtering divider: -->
+      <div class="flex items-center justify-between mb-4">
+        <h2 class="text-base font-semibold text-slate-900">
+          Your applications
+        </h2>
+
+        <!-- filter selection menu: -->
+        <select
+          id="status-filter"
+          class="rounded-lg border border-slate-300 px-3 py-1.5 text-sm text-slate-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+        >
+          <option value="All">All statuses</option>
+          <option value="Applied">Applied</option>
+          <option value="Interviewing">Interviewing</option>
+          <option value="Offer">Offer</option>
+          <option value="Rejected">Rejected</option>
+        </select>
+      </div>
+
+      <!-- // App List -->
+      <div id="app-list" class="space-y-3"></div>
+    </main>
+
+    <span
+      class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-amber-100 text-amber-800"
+    >
+      Interviewing
+    </span>
+
+    <script src="js/app.js"></script>
+  </body>
+</html>
