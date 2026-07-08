@@ -3,7 +3,7 @@
 $host = 'localhost';
 $db = 'JOB-TRACKER';
 $user = 'root';
-$pass = 'Mydingaling445';
+$pass = '';
 
 try{
     $pdo = new PDO("mysql:host=$host;dbname=$db;charset=utf8mb4", $user, $pass);
