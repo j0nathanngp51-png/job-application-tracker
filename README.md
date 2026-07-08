@@ -1,6 +1,8 @@
 What the app does:
 
-    - Screenshot (take one of your dark mode + light mode view, upload it, reference it)
+    <img width="1909" height="927" alt="image" src="https://github.com/user-attachments/assets/3d2e2de6-1f14-46e8-b644-a0eb7211a373" />
+
+    <img width="1917" height="938" alt="image" src="https://github.com/user-attachments/assets/bb5aaf6e-d9d1-4b27-957e-8d7569e4f64e" />
 
     - Tech stack (PHP, MySQL, vanilla JS, Tailwind CSS)
 
