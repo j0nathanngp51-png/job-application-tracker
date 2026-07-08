@@ -1,9 +1,9 @@
 <?php
 
 $host = 'localhost';
-$db = 'JOB-TRACKER';
+$db = 'job-tracker';
 $user = 'root';
-$pass = 'MyDingaling445';
+$pass = '';
 
 try{
     $pdo = new PDO("mysql:host=$host;dbname=$db;charset=utf8mb4", $user, $pass);
