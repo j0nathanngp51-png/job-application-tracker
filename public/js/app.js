@@ -1,3 +1,17 @@
+// Check if logged in; redirect to login page if not
+async function checkAuth() {
+  try {
+    const res = await fetch("/JOB-TRACKER/api/get_applications.php");
+    const data = await res.json();
+    if (data.error === "Not logged in") {
+      window.location.href = "login.html";
+    }
+  } catch (err) {
+    console.error("Auth check failed:", err);
+  }
+}
+checkAuth();
+
 // Dark mode setup
 const themeToggle = document.getElementById("theme-toggle");
 const htmlEl = document.documentElement;
@@ -212,6 +226,17 @@ document
 document
   .getElementById("search-box")
   .addEventListener("input", renderApplications);
+
+document
+  .getElementById("logout-btn")
+  .addEventListener("click", async function () {
+    try {
+      await fetch("/JOB-TRACKER/api/logout.php", { method: "POST" });
+    } catch (err) {
+      console.error("Logout failed:", err);
+    }
+    window.location.href = "login.html";
+  });
 
 // load the applicatoins when the page open:
 loadApplications();
